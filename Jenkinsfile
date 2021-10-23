@@ -3,16 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                maven(maven : 'jenkin-Maven') {
-                  sh 'mvn clean compile'
-                }
+                sh 'echo Build'
             }
         }
         stage('Test') {
             steps {
-                maven(maven : 'jenkin-Maven') {
-                  sh 'mvn test'
-                }
+               sh 'echo Test'
             }
             post {
                 always {
