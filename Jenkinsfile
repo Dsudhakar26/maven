@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withMaven(maven : 'jenkin-Maven') {
+                maven(maven : 'jenkin-Maven') {
                   sh 'mvn clean compile'
                 }
             }
         }
         stage('Test') {
             steps {
-                withMaven(maven : 'jenkin-Maven') {
+                maven(maven : 'jenkin-Maven') {
                   sh 'mvn test'
                 }
             }
