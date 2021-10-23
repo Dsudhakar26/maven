@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 withMaven(maven : jenkin-Maven) {
-                  sh 'mvn -B -DskipTests clean package'
+                  sh 'mvn clean compile'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'echo "delivered"'
             }
         }
     }
